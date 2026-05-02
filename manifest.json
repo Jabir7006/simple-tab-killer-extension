@@ -1,0 +1,21 @@
+{
+  "manifest_version": 3,
+  "name": "Tab Killer",
+  "version": "1.0",
+  "description": "Manually sleep tabs to save memory and CPU. Tabs won't wake up until you reload them.",
+  "action": {
+    "default_title": "Sleep Current Tab"
+  },
+  "background": {
+    "service_worker": "background.js"
+  },
+  "permissions": [
+    "tabs",
+    "activeTab"
+  ],
+  "icons": {
+    "16": "icons/icon16.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  }
+}
