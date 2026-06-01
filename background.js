@@ -3,7 +3,7 @@ chrome.action.onClicked.addListener((tab) => {
   if (tab.url.startsWith('chrome://') || tab.url.startsWith('chrome-extension://')) {
     return;
   }
-
+  
   // Get the tab details
   const url = tab.url;
   const title = tab.title;
