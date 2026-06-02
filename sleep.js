@@ -1,11 +1,8 @@
 document.addEventListener("DOMContentLoaded", () => {
-    // 1. Check if the user clicked the browser's reload button
-    // The PerformanceNavigationTiming API tells us how the page was loaded
-    const perfEntries = performance.getEntriesByType("navigation");
-    if (perfEntries.length > 0 && perfEntries[0].type === "reload") {
-        wakeUp();
-        return; // Stop further execution, we are redirecting
-    }
+    // Removed the automatic wake-up on reload check.
+    // This was causing bugs during browser session restore where Chrome
+    // would sometimes evaluate the restore as a 'reload' and try to navigate
+    // immediately, resulting in a 'New Tab' being shown instead.
 
     // 2. Parse URL parameters to restore content
     const urlParams = new URLSearchParams(window.location.search);
