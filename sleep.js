@@ -18,7 +18,10 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // 3. Populate page with original tab data securely
     if (originalTitle) {
-        document.title = `${originalTitle} (Sleeping)`;
+        // Browser tab title: show only the first word of the original title (e.g. "Gemini (Sleeping)")
+        // On-page title: keep the full original title so the user knows what they slept
+        const firstWord = originalTitle.trim().split(/\s+/)[0];
+        document.title = `${firstWord} ... (Sleeping)`;
         titleEl.textContent = originalTitle;
     }
 
